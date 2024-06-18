@@ -18,9 +18,22 @@ function App() {
       setFilteredList(list);
     }
 
+    // this code filters those items who begin with entered input value
+    // eg: entered input text: ap --> will filter only Apple
+
+    const filteredValues = list.filter(
+      (item) => item.toLowerCase().indexOf(e.target.value.toLowerCase()) === 0
+    );
+
+    /*
+
+    This code with simple & slight modification filters items even if they contain the entered input text
+    eg: entered input text: ap --> will filter Pineapple & Apple
+
     const filteredValues = list.filter(
       (item) => item.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
     );
+ */
 
     setFilteredList(filteredValues);
   };
